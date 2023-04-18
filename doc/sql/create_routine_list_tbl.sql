@@ -8,3 +8,4 @@ CREATE TABLE routine_list(
 	,list_now_date DATETIME DEFAULT NOW()
 	)
 ;
+commit;
