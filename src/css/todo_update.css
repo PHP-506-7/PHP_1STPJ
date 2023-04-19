@@ -1,0 +1,97 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgb(246, 246, 246);
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
+    background-size: cover;
+}
+
+.container {
+    margin: 0 55px;
+    display: grid;
+    grid-gap: 30px;
+}
+
+#back_button {
+    width: 12px;
+    margin-left: 33px;
+    margin-top: 66px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.container > p {
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0 0 40px;
+}
+
+.contents {
+    display: grid;
+    grid-gap: 34px;
+}
+
+#logo {
+    width: 250px;
+}
+
+.line {
+    display: grid;
+    grid-template-columns: 10px 240px;
+    grid-gap: 27px;
+}
+
+.line p {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+#line {
+    width: 5px;
+}
+
+.clock, .clip{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-gap: 17px;
+}
+
+#clock, #clip {
+    width: 20px;
+    vertical-align: center;
+}
+
+.clip p, .clock p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.button {
+    padding-top: 130px;
+    display: grid;
+    grid-template-columns: 106px 106px;
+    grid-gap: 27px;
+    justify-content: center;
+}
+
+button {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(63, 63, 63);
+    background-color: rgb(246, 246, 246);
+    border-radius: 20px;
+    border: none;
+    width: 106px;
+    height: 41px;
+}
