@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0; margin: 0;
+        }
+        .bg{
+            background-color: #000;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            /* 센터설정 */
+        }
+        .contents_all{
+            display: grid;
+            gap: 20px;
+        }
+        .goal_status{
+            width: 327px; height: 128px; border-radius: 20px;
+            background: linear-gradient(170deg, #86ff99 , #88c0fc , #be9eff ,#ffb8e0 );
+        }
+        li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .list{
+            width: 327px; height: 59px;
+            background-color: #f6f6f6;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 2fr 4fr 1fr;
+            padding: 15px;
+            box-sizing:border-box;
+        }
+        .check_butten{
+            margin: 0 auto;
+            width: 44px; height: 44px;
+            background-size: 44px;
+            background-image: url(./common/img/button.png);
+            
+        }
+        .phrase{
+            color: #f6f6f6;
+        }
+        .goal_status{
+            font-weight:bold;
+            display: grid;
+            grid-template-columns: repeat(2 1fr);
+            padding: 20px;
+            box-sizing:border-box;
+        }
+        .goal_title{
+            grid-column: 1/3;
+        }
+        .goal_text{
+            font-weight: 100;
+        }
+        .check_status{
+            background-image: url(./common/img/checkcycle.png);
+            background-size: 24px;
+            width: 24px; height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div></div>
+        <!-- 여백의 미 -->
+        <div class="contents_all">
+            <head>
+                <div class="phrase">
+                    <div>
+                        <p>안녕하세요.</p>
+                    </div>
+                    <div>
+                        대충 이미지
+                    </div>
+                    <div>
+                        <p>오늘은 00월 00입니다.</p>
+                    </div>
+                </div>
+                <div class="goal_status">
+                    <div class="goal_title">
+                        <p>Today's Routine</p>
+                    </div>
+                    <div class="goal_text">
+                        <p>3/5 완료</p>
+                    </div>
+                    <div class="goal_psent">
+                        <p>68.9%</p>
+                    </div>
+                </div>
+            </head>
+            <main>
+                <ul>
+                    <li>
+                        <div class="list">
+                            <div class="due_time">
+                                <p>17:00</p>
+                            </div>
+                            <div class="list_title">
+                                <p>할일 제목</p>
+                            </div>
+                            <div class="check_status"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list">
+                            <div class="due_time">
+                                <p>17:00</p>
+                            </div>
+                            <div class="list_title">
+                                <p>할일 제목</p>
+                            </div>
+                            <div class="check_status"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list">
+                            <div class="due_time">
+                                <p>17:00</p>
+                            </div>
+                            <div class="list_title">
+                                <p>할일 제목</p>
+                            </div>
+                            <div class="check_status"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list">
+                            <div class="due_time">
+                                <p>17:00</p>
+                            </div>
+                            <div class="list_title">
+                                <p>할일 제목</p>
+                            </div>
+                            <div class="check_status"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list">
+                            <div class="due_time">
+                                <p>17:00</p>
+                            </div>
+                            <div class="list_title">
+                                <p>할일 제목</p>
+                            </div>
+                            <div class="check_status"></div>
+                        </div>
+                    </li>
+                </ul>
+            </main>
+            <footer>
+                <div class='check_butten'></div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
