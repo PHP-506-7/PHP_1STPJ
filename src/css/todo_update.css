@@ -77,17 +77,18 @@ body {
     display: grid;
     grid-template-columns: 20px 30px 5px 30px;
     grid-gap: 17px;
+    align-items: center;
 }
 
 .clip{
     display: grid;
     grid-template-columns: 20px 1fr;
     grid-gap: 17px;
+    align-items: center;
 }
 
 #clock, #clip {
     width: 20px;
-    vertical-align: center;
 }
 
 .clip input, .clock input {
@@ -98,7 +99,7 @@ body {
 }
 
 .but {
-    padding-top: 40%;
+    padding-top: 140px;
     display: grid;
     grid-template-columns: 106px 106px;
     grid-gap: 27px;
