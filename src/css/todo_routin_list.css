@@ -1,0 +1,90 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+*{
+    padding: 0; margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.bg{
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+.contents_all{
+    display: grid;
+    gap: 20px;
+    grid-column: 2/3;
+}
+.goal_status{
+    width: 327px; height: 128px; border-radius: 20px;
+    background: linear-gradient(170deg, #86ff99 , #88c0fc , #be9eff ,#ffb8e0 );
+}
+li{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.list{
+    width: 327px; height: 59px;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+    padding: 15px;
+    box-sizing:border-box;
+    align-items: center;
+}
+.check_butten{
+    width: 44px; height: 44px;
+    background-size: 44px;
+    background-image: url(../common/img/button.png);
+    margin: 0 auto;
+}
+.phrase{
+    color: #f6f6f6;
+    font-size: 30px;
+    font-weight: 800;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.goal_status{
+    font-weight:bold;
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    padding: 20px;
+    box-sizing:border-box;
+}
+.goal_title{
+    grid-column: 1/3;
+}
+.goal_text{
+    font-weight: 100;
+}
+.check_status{
+    background-image: url(../common/img/checkcycle.png);
+    background-size: 24px;
+    width: 24px; height: 24px;
+}
+.checked_status{
+    background-image: url(../common/img/Thumbs_Up.png);
+    background-size: 24px;
+    width: 24px; height: 24px;
+}
+.waving_hand{
+    background-image: url(../common/img/Waving_Hand.png);
+    background-size: 36px;
+    width: 36px; height: 36px;
+}
+.date{
+    grid-column: 1/3;
+}
+.list_title
+,.due_time
+{
+    color: #3f3f3f;
+}
+.list_title_high
+,.due_time_high
+{
+    color: #000000;
+    font-weight: bold;
+    font-style:oblique;
+}
