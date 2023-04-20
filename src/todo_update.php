@@ -29,18 +29,17 @@
     }
 
     // 시간과 분 option 배열
-    $hour = range(0, 23);
-    foreach ($hour as $val) 
-    {
-        if ($val <= 9)
-        {
-            $val = "0".$val;
-        }
-        else
-        {
-            $val = $val;
-        }
+    $hour = array();
+    for ($i=0; $i < 24; $i++) {
+    if ($i<10) {
+        array_push($hour, "0".$i);
     }
+    else
+    {
+        array_push($hour, $i);
+    }
+}
+
     $min = array("00", "10", "20", "30", "40", "50");
 
 ?>
@@ -52,13 +51,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/todo_update.css">
+    <link rel="icon" href="common/img/favi.png">
     <title>수정</title>
 </head>
 <body>
     <div class="position">
-        <button class="back_button" onclick="location.href='todo_detail.php?list_no=<? echo $list_no ?>'">
-            <img id="back_button" src="common/img/back_button.png" alt="back_button">
-        </button>
+        <a href="todo_detail.php?list_no=<? echo $list_no ?>">
+            <button class="back_button">
+                <img id="back_button" src="common/img/back_button.png" alt="back_button">
+            </button>
+        </a>
         <div class="container">
             <div class="logo">
                 <img id="logo" src="common/img/logo.png" alt="logo">
@@ -102,7 +104,7 @@
                     <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>
                     <div class="but">
                         <button type="submit">완료</button>
-                        <button onclick="location.href='todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>'">삭제</button>
+                        <a href="todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>"><button type="button">삭제</button></a>
                     </div>
                 </div>
             </form>
