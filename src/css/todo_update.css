@@ -20,10 +20,16 @@ body {
     grid-gap: 30px;
 }
 
-#back_button {
-    width: 12px;
+.back_button {
     margin-left: 33px;
     margin-top: 66px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#back_button {
+    width: 12px;
 }
 
 .logo {
@@ -41,6 +47,11 @@ body {
     grid-gap: 34px;
 }
 
+.logo {
+    width: 60vw;
+    margin: 0 auto;
+}
+
 #logo {
     width: 250px;
 }
@@ -51,16 +62,24 @@ body {
     grid-gap: 27px;
 }
 
-.line p {
+.line input {
     font-size: 26px;
     font-weight: 700;
+    border: none;
+    background: transparent;
 }
 
 #line {
     width: 5px;
 }
 
-.clock, .clip{
+.clock {
+    display: grid;
+    grid-template-columns: 20px 30px 5px 30px;
+    grid-gap: 17px;
+}
+
+.clip{
     display: grid;
     grid-template-columns: 20px 1fr;
     grid-gap: 17px;
@@ -71,20 +90,22 @@ body {
     vertical-align: center;
 }
 
-.clip p, .clock p {
+.clip input, .clock input {
     font-size: 16px;
     font-weight: 400;
+    border: none;
+    background: transparent;
 }
 
-.button {
-    padding-top: 130px;
+.but {
+    padding-top: 40%;
     display: grid;
     grid-template-columns: 106px 106px;
     grid-gap: 27px;
     justify-content: center;
 }
 
-button {
+.but button {
     font-weight: 600;
     font-size: 18px;
     text-align: center;
@@ -94,4 +115,18 @@ button {
     border: none;
     width: 106px;
     height: 41px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-size: inherit;
+}
+
+option {
+    color: #181A20;
 }
