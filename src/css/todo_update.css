@@ -100,7 +100,7 @@
 }
 
 .but {
-    padding-top: 140px;
+    padding-top: 120px;
     display: grid;
     grid-template-columns: 106px 106px;
     grid-gap: 27px;
