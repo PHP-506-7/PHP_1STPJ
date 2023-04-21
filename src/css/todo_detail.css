@@ -10,6 +10,7 @@
 
 body {
     height: 100vh;
+    width: 100vw;
     background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
     background-size: cover;
 }
@@ -72,12 +73,17 @@ a {
     width: 10px;
 }
 
-.clock, .clip{
+.clock {
     display: grid;
     grid-template-columns: 20px 1fr 1fr 1fr;
     grid-gap: 17px;
 }
 
+.clip {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-gap: 17px
+}
 .clock input 
 ,.clip input{
     border: none;
