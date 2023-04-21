@@ -17,8 +17,9 @@ body {
 a {
     text-decoration: none;
 }
+
 .container {
-    padding-top: 91px;
+    padding-top: 100px;
     margin: 0 55px;
     display: grid;
     grid-gap: 30px;
@@ -92,7 +93,7 @@ a {
 }
 
 .but {
-    padding-top: 130px;
+    padding-top: 120px;
     display: grid;
     grid-template-columns: 106px 106px;
     grid-gap: 27px;
