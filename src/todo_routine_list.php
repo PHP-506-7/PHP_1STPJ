@@ -36,7 +36,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/todo_routin_list.css">
+    <link rel="stylesheet" href="./css/todo_routine_list.css">
 </head>
 <body>
     <div class="bg">
@@ -49,7 +49,7 @@
                     <div class="waving_hand">
                     </div>
                     <div class="date">
-                        <p>오늘은 <?echo date("m")?>월 <?echo date("d")?>입니다.</p>
+                        <p>오늘은 <?echo date("m")?>월 <?echo date("d")?>일입니다.</p>
                     </div>
                 </div>
                 <div class="goal_status">
@@ -76,7 +76,7 @@
                         ?>
                     </div>
                     <div class="goal_pcent">
-                        <p><?echo $goal_percent?>%</p>
+                        <p><?echo $goal_percent."%"?></p>
                     </div>
                 </div>
             </head>
