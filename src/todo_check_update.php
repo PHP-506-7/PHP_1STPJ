@@ -1,7 +1,5 @@
 <?php
-    define("DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/");
-    define( "URL_DB", DOC_ROOT."1stproj/common/db_common.php");
-    include_once(URL_DB);
+    include_once( "common/fnc_kim.php" );
 
     $arr_get=$_GET;
     // var_dump($arr_get);
