@@ -142,7 +142,7 @@
                     ?>
                 </ul>
             </main>
-            <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><div class="check_butten">
+            <a href="/1stproj/todo_detail.php>"><div class="check_butten">
             </div></a>
         </div>
     </div>
