@@ -5,18 +5,18 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 .bg{
-    background-color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 70px 1fr 47px;
+    height: 100vh;
+    background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
+    background-size: cover;
 }
 .contents_all{
     display: grid;
     gap: 20px;
     grid-column: 2/3;
-}
-.goal_status{
-    width: 327px; height: 128px; border-radius: 20px;
-    background: linear-gradient(170deg, #86ff99 , #88c0fc , #be9eff ,#ffb8e0 );
+    grid-row: 2/3;
 }
 li{
     list-style: none;
@@ -27,7 +27,7 @@ li{
     background-color: #f6f6f6;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 2fr 4fr 1fr;
+    grid-template-columns: 2fr 7fr 1fr;
     padding: 15px;
     box-sizing:border-box;
     align-items: center;
@@ -46,9 +46,13 @@ li{
     grid-template-columns: repeat(2, 1fr);
 }
 .goal_status{
+    width: 327px; height: 128px; border-radius: 20px;
+    background: linear-gradient(170deg, #86ff99 , #88c0fc , #be9eff ,#ffb8e0 );
     font-weight:bold;
     display: grid;
     grid-template-columns: repeat(2 1fr);
+    grid-template-rows: repeat(3 1fr);
+    grid-template-rows: 1fr 25px;
     padding: 20px;
     box-sizing:border-box;
 }
@@ -56,7 +60,8 @@ li{
     grid-column: 1/3;
 }
 .goal_text{
-    font-weight: 100;
+    font-weight: bold;
+    grid-column: 1/3;
 }
 .check_status{
     background-image: url(../common/img/checkcycle.png);
@@ -64,7 +69,7 @@ li{
     width: 24px; height: 24px;
 }
 .checked_status{
-    background-image: url(../common/img/Thumbs_Up.png);
+    background-image: url(../common/img/checked.png);
     background-size: 24px;
     width: 24px; height: 24px;
 }
@@ -76,15 +81,53 @@ li{
 .date{
     grid-column: 1/3;
 }
-.list_title
+.list_title a
 ,.due_time
 {
     color: #3f3f3f;
+    text-decoration: none;
 }
-.list_title_high
+.list_title_high a
 ,.due_time_high
 {
     color: #000000;
     font-weight: bold;
     font-style:oblique;
+    text-decoration: none;
+}
+.goal_pcent p{
+    font-size: 20px;
+}
+.limit_str
+{
+    display: block;
+    width: 200px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.due_time_over{
+    color: #be9eff;
+    font-weight: bold;
+    font-style:oblique;
+    text-decoration: none;
+}
+.gauge{
+    width: 200px; height: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(1px,1fr));
+    /* grid-template-columns: repeat(6,1fr); */
+}
+.goal_gauge{
+    background-color: #181A20;
+}
+.no_gauge{
+    background-color: #f6f6f6;
+}
+.gauge > div:last-child{
+    border-radius: 0 5px 5px 0;
+}
+.gauge > div:first-child{
+    border-radius: 5px 0 0 5px;
 }
