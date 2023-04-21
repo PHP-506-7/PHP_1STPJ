@@ -10,6 +10,7 @@
 
 body {
     height: 100vh;
+    width: 100vw;
     background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
     background-size: cover;
 }
@@ -17,21 +18,30 @@ body {
 a {
     text-decoration: none;
 }
+
 .container {
     margin: 0 55px;
     display: grid;
     grid-gap: 30px;
 }
 
+.contents {
+    display: grid;
+    grid-gap: 30px;
+}
+
+
 .logo {
+    margin-top: 90px;
     text-align: center;
 }
 
-#text, #text_1 {
-    font-size: 25px;
+#text{
+    font-size: 26px;
     font-weight: 800;
     text-align: center;
     text-align: left;
+    line-height: 50px;
 }
 
 #logo {
@@ -51,7 +61,7 @@ a {
 }
 
 .line p {
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 700;
 }
 
@@ -59,12 +69,21 @@ a {
     width: 5px;
 }
 
-.clock, .clip{
+.clock {
+    width: 10px;
+}
+
+.clock {
     display: grid;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 20px 1fr 1fr 1fr;
     grid-gap: 17px;
 }
 
+.clip {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-gap: 17px
+}
 .clock input 
 ,.clip input{
     border: none;
@@ -88,7 +107,7 @@ a {
     justify-content: center;
 }
 
-button {
+.but button {
     font-weight: 600;
     font-size: 18px;
     text-align: center;
@@ -100,26 +119,27 @@ button {
     height: 41px;
 }
 
-#done {
-    width: 44px;
-    text-align: center;
-}
 
-#not_done {
+#not_done, #done {
+    margin-top: 35px;
     width: 44px;
     text-align: center;
 }
 
 .done_but {
-    padding-bottom: 100px;
+    padding-bottom: 15px;
     display: grid;
     grid-template-columns: 70px;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 #list_but, #list_but_1{
     color: rgb(63, 63, 63);
 }
 
+.phase {
+    height: 114px;
+}
 
