@@ -8,7 +8,7 @@
     color: rgb(246, 246, 246);
 }
 
-body {
+.position {
     height: 100vh;
     background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
     background-size: cover;
