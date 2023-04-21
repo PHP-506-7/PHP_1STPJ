@@ -30,15 +30,16 @@
 
     // 시간과 분 option 배열
     $hour = array();
-    for ($i=0; $i < 24; $i++) {
-    if ($i<10) {
-        array_push($hour, "0".$i);
-    }
-    else
+    for ($i=0; $i < 24; $i++) 
     {
-        array_push($hour, $i);
+        if ($i<10) {
+            array_push($hour, "0".$i);
+        }
+        else
+        {
+            array_push($hour, $i);
+        }
     }
-}
 
     $min = array("00", "10", "20", "30", "40", "50");
 
@@ -58,7 +59,7 @@
     <div class="position">
         <a href="todo_detail.php?list_no=<? echo $list_no ?>">
             <button class="back_button">
-                <img id="back_button" src="common/img/back_button.png" alt="back_button">
+                <img id="back_button" src="common/img/back_button.png" alt="취소">
             </button>
         </a>
         <div class="container">
