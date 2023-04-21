@@ -59,7 +59,7 @@ $result_info = todo_select_todo_detail( $arr_get["list_no"] );
             {
             ?>
             <a href="todo_detail_check.php?list_no=<? echo $result_info["list_no"]?>"> 
-                <img id="not_done"src="./common/img/checkcycle.png" alt="미완료">
+                <img id="not_done"src="./common/img/circle.png" alt="미완료">
             </a>
             <?
             }
