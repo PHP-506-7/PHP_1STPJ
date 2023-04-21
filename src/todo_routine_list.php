@@ -1,7 +1,7 @@
 <?php
-    define("DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/");
-    define( "URL_DB", DOC_ROOT."1stproj/common/db_common.php");
-    include_once(URL_DB);
+    define( "URL_DB", "common/db_common.php");
+    include_once( URL_DB );
+    include_once( "common/fnc_kim.php" );
     // var_dump(DOC_ROOT);
 
     $list_info=routin_list_info(); //리스트 정보들
@@ -36,7 +36,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/todo_routine_list.css">
+    <link rel="stylesheet" href="./css/todo_routin_list.css">
 </head>
 <body>
     <div class="bg">
@@ -94,9 +94,9 @@
                                 <?echo mb_substr($value["list_due_time"],0,5)?> 
                             </div>
                             <div class="list_title">
-                                <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str" ><?echo $value["list_title"]?></a>
+                                <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str" ><?echo $value["list_title"]?></a>
                             </div>
-                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="checked_status"></a>
+                            <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="checked_status"></a>
                             <?   
                         }
                         elseif ($value["list_done_flg"]==0) {
@@ -106,7 +106,7 @@
                                     <?echo mb_substr($value["list_due_time"],0,5)?> 
                                 </div>
                                 <div class="list_title_high">
-                                    <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
                                 </div>
                             <?
                             }
@@ -116,7 +116,7 @@
                                     <?echo mb_substr($value["list_due_time"],0,5)?> 
                                 </div>
                                 <div class="list_title_high">
-                                    <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
                                 </div>
                             <?
                             }
@@ -126,12 +126,12 @@
                                     <?echo mb_substr($value["list_due_time"],0,5)?> 
                                 </div>
                                 <div class="list_title">
-                                    <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
                                 </div>
                             <?
                             }
                             ?>
-                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
+                            <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
                         <?
                         }
                         ?>
@@ -142,7 +142,7 @@
                     ?>
                 </ul>
             </main>
-            <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><div class="check_butten">
+            <a href="todo_insert.php"><div class="check_butten">
             </div></a>
         </div>
     </div>

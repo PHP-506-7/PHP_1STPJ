@@ -1,4 +1,7 @@
 <?php
+
+include_once("db_common.php");
+
 // ---------------------------------------
 // 함수명      : insert_routine_list
 // 기능        : 루틴임포를 리스트에 생성
