@@ -4,7 +4,7 @@ include_once( "common/fnc_park.php" );
 
 $arr_get = $_GET;
 
-$result_info = todo_select_todo_detail( $arr_get["list_no"] );
+$result_info = todo_select_detail( $arr_get["list_no"] );
 ?>
 
 
