@@ -32,8 +32,8 @@
         exit();
     }
 
-    // 시간과 분 option 배열
-    $hour = array();
+    // 시간과 분 option값으로 넣는 배열
+    $hour = array(); // 시간
     for ( $i=0; $i < 24; $i++ ) 
     {
         if ( $i < 10 ) {
@@ -44,8 +44,9 @@
             array_push( $hour, $i );
         }
     }
-
-    $min = array( "00", "10", "20", "30", "40", "50" );
+    $min = array(  //분 
+        "00", "10", "20", "30", "40", "50" 
+    );
 
 ?>
 
@@ -61,12 +62,13 @@
 </head>
 <body>
     <div class="position">
+        <!-- 취소 버튼 -->
         <a href="todo_detail.php?list_no=<? echo $list_no ?>">
             <button class="back_button">
                 <img id="back_button" src="common/img/back_button.png" alt="취소">
             </button>
         </a>
-        <div class="container">
+        <div class="container">     <!-- 로고부터 완료/삭제 버튼 -->
             <div class="logo">
                 <img id="logo" src="common/img/logo.png" alt="logo">
             </div>
@@ -109,7 +111,7 @@
                     <input type="hidden" name="routine_no" value="<? echo $result_info["routine_no"] ?>" readonly></input>
                     <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>
                     <div class="none_but"></div>
-                    <div class="but">
+                    <div class="but">     <!-- 버튼 부분 -->
                         <button type="submit">완료</button>
                         <a href="todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>"><button type="button">삭제</button></a>
                     </div>
