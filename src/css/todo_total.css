@@ -363,6 +363,14 @@ li{
 .gauge > div:first-child{
     border-radius: 5px 0 0 5px;
 }
+#goal_gauge_one{
+    background-color: #181A20;
+    border-radius: 5px;
+}
+#no_gauge_one{
+    background-color: #f6f6f6;
+    border-radius: 5px;
+}
 
 
 
