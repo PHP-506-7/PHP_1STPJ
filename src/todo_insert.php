@@ -4,7 +4,16 @@ include_once( "common/fnc_park.php" );
 
 $http_method = $_SERVER["REQUEST_METHOD"];
 
+if ( $http_method === "POST" ) 
+{
+    $arr_post = $_POST;
+    $result = todo_insert_routine_info($arr_post);
+    $result_list = todo_insert_routine_list($result);
+    $result_select = todo_select_detail($result_list);
 
+    header( "Location: todo_detail.php?list_no=".$result_select["list_no"]);
+    exit();
+}
 
 $hour = array();
     for ($i=0; $i < 24; $i++) 
@@ -25,16 +34,7 @@ $arr_1 = todo_select_recom_routine();
 $rand_no = rand(0,count($arr_1)-1);
 
 
-if ( $http_method === "POST" ) 
-{
-    $arr_post = $_POST;
-    $result = todo_insert_routine_info($arr_post);
-    $result_list = todo_insert_routine_list($result);
-    $result_select = todo_select_detail($result_list);
 
-    header( "Location: todo_detail.php?list_no=".$result_select["list_no"]);
-    exit();
-}
 
 
 

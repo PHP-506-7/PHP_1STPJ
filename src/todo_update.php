@@ -10,8 +10,13 @@
         if ( array_key_exists( "list_no", $_GET ) )
         {
             $list_no = $_GET["list_no"];
+            $result_info = select_page_routine_info( $list_no );
         }
-        $result_info = select_page_routine_info( $list_no );
+        else
+        {
+            echo "잘못된 페이지입니다.";
+            exit();
+        }
     }
     else
     {
@@ -23,25 +28,24 @@
         // routine_list 테이블 업데이트
         update_routine_list();
 
-        // todo: routine_no -> list_no로 수정
         header( "Location: todo_detail.php?list_no=".$arr_post["list_no"] );
         exit();
     }
 
     // 시간과 분 option 배열
     $hour = array();
-    for ($i=0; $i < 24; $i++) 
+    for ( $i=0; $i < 24; $i++ ) 
     {
-        if ($i<10) {
-            array_push($hour, "0".$i);
+        if ( $i < 10 ) {
+            array_push( $hour, "0".$i );
         }
         else
         {
-            array_push($hour, $i);
+            array_push( $hour, $i );
         }
     }
 
-    $min = array("00", "10", "20", "30", "40", "50");
+    $min = array( "00", "10", "20", "30", "40", "50" );
 
 ?>
 
