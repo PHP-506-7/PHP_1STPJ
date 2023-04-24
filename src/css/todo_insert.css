@@ -99,6 +99,7 @@ a {
     grid-template-columns: 106px 106px;
     grid-gap: 27px;
     justify-content: center;
+    margin-bottom: 20%;
 }
 
 button {
