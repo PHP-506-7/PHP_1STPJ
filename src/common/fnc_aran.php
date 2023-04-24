@@ -1,47 +1,7 @@
 <?php
 include_once("db_common.php");
 
-// ----------------------------------------------
-// 함수명      : select_list_info
-// 기능        : 리스트 정보를 받아오는 함수
-// 파라미터    : 없음          
-// 리턴값      : Array        $result
-// ----------------------------------------------
-function select_list_info()
-{
-    $sql =
-        " SELECT "
-        ."  list_no "
-        ."  ,list_contents "
-        ."  ,list_title "
-        ."  ,list_due_time "
-        ." FROM routine_list "
-    ;
-
-    $arr_prepare = array();
-
-    $conn = null;
-    try 
-    {
-        db_conn( $conn );
-        $stmt = $conn->prepare( $sql );
-        $stmt->execute( $arr_prepare );
-        $result = $stmt->fetchAll();
-    } 
-    catch ( Exception $e ) 
-    {
-        return $e->getMessage();
-    }
-    finally
-    {
-        $conn = null;
-    }
-    
-    return $result;
-}
-
-
-// todo: 나중에 합침
+// to_do: 나중에 합침
 // ----------------------------------------------
 // 함수명      : select_page_list_info
 // 기능        : 해당 페이지 리스트 정보를 받아오는 함수
@@ -93,7 +53,7 @@ function select_page_list_info(&$param_arr)
 // 파라미터    : INT          &$param_no
 // 리턴값      : Array        $result
 // ----------------------------------------------
-function select_page_routine_info(&$param_no)
+function select_page_routine_info( &$param_no )
 {
     $sql =
         " SELECT "
@@ -105,16 +65,11 @@ function select_page_routine_info(&$param_no)
         ." WHERE routine_no = :routine_no "
         ;
     
-    $arr_no = 
-        array(
-            "list_no" => $param_no
-        );
-
-    $arr = select_page_list_info($arr_no);
+    $arr = todo_select_detail( $param_no );
     
     $arr_prepare =
         array(
-            ":routine_no" => $arr[0]["routine_no"]
+            ":routine_no" => $arr["routine_no"]
         );
 
     $conn = null;
@@ -137,7 +92,7 @@ function select_page_routine_info(&$param_no)
     return $result[0];
 }
 
-// todo: 겹치는지 확인
+// to_do: 겹치는지 확인
 // ----------------------------------------------
 // 함수명      : update_routine_info
 // 기능        : routine_no에 따라 입력한 정보 업데이트
