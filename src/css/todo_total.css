@@ -10,7 +10,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh; max-height: 100%;
     width: 100%;
     background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
 }
@@ -225,7 +225,6 @@ option {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 70px 1fr 47px;
-    min-height: 844px;
 }
 .contents_all{
     display: grid;
