@@ -36,7 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="common/img/favi.png">
     <title>list</title>
-    <link rel="stylesheet" href="./css/todo_routine_list.css">
+    <link rel="stylesheet" href="./css/todo_total.css">
 </head>
 <body>
     <div class="bg">
