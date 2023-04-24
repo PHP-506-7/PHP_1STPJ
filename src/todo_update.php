@@ -1,5 +1,5 @@
 <?php
-    define( "URL_DB", "common/fnc_aran.php" );
+    define( "URL_DB", "common/fnc_park.php" );
     include_once( URL_DB );
 
     $http_method = $_SERVER["REQUEST_METHOD"];
