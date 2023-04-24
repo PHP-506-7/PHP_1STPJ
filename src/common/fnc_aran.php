@@ -41,6 +41,7 @@ function select_list_info()
 }
 
 
+// todo: 나중에 합침
 // ----------------------------------------------
 // 함수명      : select_page_list_info
 // 기능        : 해당 페이지 리스트 정보를 받아오는 함수
@@ -85,7 +86,7 @@ function select_page_list_info(&$param_arr)
     return $result;
 }
 
-
+// todo: 합칠지 확인
 // ----------------------------------------------
 // 함수명      : select_page_routine_info
 // 기능        : 해당 페이지 루틴 정보를 받아오는 함수
@@ -136,9 +137,10 @@ function select_page_routine_info(&$param_no)
     return $result[0];
 }
 
+// todo: 겹치는지 확인
 // ----------------------------------------------
 // 함수명      : update_routine_info
-// 기능        : routine_no 정보 업데이트
+// 기능        : routine_no에 따라 입력한 정보 업데이트
 // 파라미터    : Array        &$param_arr
 // 리턴값      : INT/STRING   $result_cnt/ERRMSG
 // ----------------------------------------------

@@ -10,7 +10,7 @@ update_routine_del_flg( $get_arr );
 // routine_list 테이블 정보 삭제
 delete_list_info( $get_arr );
 
-header( "Location: todo_list.php" );
+header( "Location: todo_routine_list.php" );
 exit();
 
 ?>
