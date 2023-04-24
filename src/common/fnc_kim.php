@@ -239,6 +239,8 @@ function update_check_flg(&$param_arr)
 // var_dump(db_conn());
 // var_dump(insert_routine_list());
 // var_dump(routin_list_info());
+// var_dump(count(routin_list_info()));
+
 // $arr[]=routin_list_info();
 // print_r($arr['list_title']);
 // var_dump(routin_list_info_count(0));
