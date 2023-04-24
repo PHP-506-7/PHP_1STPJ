@@ -113,6 +113,7 @@ function todo_select_detail( &$param_no )
 기능        : 해당 페이지 루틴 정보를 받아오는 함수
 파라미터    : INT          &$param_no
 리턴값      : Array        $result
+작성자      : 최아란
 -----------------------------------------------*/
 function select_page_routine_info( &$param_no )
 {
@@ -158,6 +159,7 @@ function select_page_routine_info( &$param_no )
 기능        : routine_no에 따라 입력한 정보 업데이트
 파라미터    : Array        &$param_arr
 리턴값      : INT/STRING   $result_cnt/ERRMSG
+작성자      : 최아란
 -----------------------------------------------*/
 function update_routine_info(&$param_arr)
 {
@@ -207,6 +209,7 @@ function update_routine_info(&$param_arr)
                 routine_info 정보로 최신화
 파라미터    : 없음
 리턴값      : INT/STRING   $result_cnt/ERRMSG
+작성자      : 최아란
 -----------------------------------------------*/
 function update_routine_list()
 {
@@ -251,6 +254,7 @@ function update_routine_list()
 기능        : 루틴 삭제 플래그 설정
 파라미터    : Array        &$param_arr    
 리턴값      : INT/STRING   $result_cnt/ERRMSG
+작성자      : 최아란
 -----------------------------------------------*/
 function update_routine_del_flg( &$param_arr )
 {
@@ -295,6 +299,7 @@ function update_routine_del_flg( &$param_arr )
                 list에서 모두 삭제
 파라미터    : Array        &$param_arr    
 리턴값      : INT/STRING   $result_cnt/ERRMSG
+작성자      : 최아란
 -----------------------------------------------*/
 function delete_list_info(&$param_arr)
 {

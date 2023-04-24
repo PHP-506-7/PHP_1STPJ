@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
-    color: rgb(246, 246, 246);
+    color: #f6f6f6;
 }
 
 body {
@@ -187,7 +187,7 @@ a {
 
 .none_but {
     display: grid;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 56px 1fr;
 }
 
 #but1, #but2 {
