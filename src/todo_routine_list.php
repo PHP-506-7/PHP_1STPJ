@@ -1,8 +1,7 @@
 <?php
     define( "URL_DB", "common/db_common.php");
     include_once( URL_DB );
-    include_once( "common/fnc_kim.php" );
-    // var_dump(DOC_ROOT);
+
 
     
     if ((count(routin_list_info()))==0) { //화면 방문시 리스트 목록 체크 //0424 edit 비효율 코드 변경

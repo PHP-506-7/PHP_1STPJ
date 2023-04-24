@@ -226,6 +226,7 @@ option {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 70px 1fr 47px;
+    min-height: 844px;
 }
 .contents_all{
     display: grid;

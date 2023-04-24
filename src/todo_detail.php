@@ -1,6 +1,6 @@
 <?php
 
-include_once( "common/fnc_park.php" );
+include_once( "common/db_common.php" );
 
 $arr_get = $_GET;
 

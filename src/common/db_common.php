@@ -33,62 +33,6 @@ function db_conn( &$param_conn )
 
 
 /*---------------------------------------------
-함수명      : todo_insert_recom_routine
-기능        : 게시글 작성
-파라미터    : Arr      &$param_arr
-리턴값      :  int/array     $result_cnt/ERRMSG
-작성자      : 박수연
------------------------------------------------*/
-
-function todo_insert_recom_routine( &$param_arr )
-{
-    $sql =
-        " INSERT INTO "
-        ." recom_routine "
-        ." ( "
-        ." recom_title "
-        ." ,recom_contents "
-        ." ) "
-        ." VALUES "
-        ." ( "
-        ." :recom_title "
-        ." ,:recom_contents"
-        ." ) "
-        ;
-
-    $arr_prepare =
-        array(
-            ":recom_title" => $param_arr["recom_title"]
-            ,":recom_contents" => $param_arr["recom_contents"]
-        );
-
-    $conn = null;
-    
-    try 
-    {
-        db_conn( $conn );
-        $conn->beginTransaction();
-        $stmt = $conn -> prepare( $sql ); 
-        $stmt -> execute( $arr_prepare ); 
-        $result_cnt = $stmt->rowCount();
-        $conn->commit();
-    } 
-    catch ( Exception $e) 
-    {
-        $conn->rollBack();
-        return $e->getMessage(); 
-    }
-    finally 
-    {
-        $conn = null;
-    }
-
-    return $result_cnt;
-
-}
-
-
-/*---------------------------------------------
 함수명      : todo_select_detail
 기능        : 게시글 정보
 파라미터    : int      &$param_no
@@ -530,4 +474,199 @@ function todo_insert_routine_list( &$param_no )
     return $last_no;
 }
 
+
+// ---------------------------------------
+// 함수명      : insert_routine_list
+// 기능        : 루틴임포를 리스트에 생성
+// 파라미터    : 없음
+// 리턴값      : 없음
+// 작성자      : 김재성
+// ---------------------------------------
+
+function insert_routine_list()
+{
+    
+
+    $sql = 
+    " INSERT INTO "
+    ." routine_list "
+    ." ( "
+    ."      routine_no "
+	."      ,list_title "
+	."      ,list_contents "
+	."      ,list_due_time "
+    ." ) "
+	." ( "
+    ."  SELECT "
+	."      routine_no "
+	."      ,routine_title "
+	."      ,routine_contents "
+	."      ,routine_due_time "
+	."  FROM routine_info "
+	."  WHERE "
+    ."      routine_del_flg='0' "
+    ." ) "
+    ;
+
+    $conn=null;
+    
+    try {
+        db_conn($conn);
+        $conn->beginTransaction();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute();
+        $result_count=$stmt->rowCount();
+        $conn->commit();
+        
+    } catch (EXCEPTION $e) {
+        echo $e->getMessage();
+        $conn->rollback();
+    }
+    finally{
+        $conn = null;
+    }
+    return $result_count;
+}
+
+// ---------------------------------------
+// 함수명      : routin_list_info
+// 기능        : 오늘 routin_list 모든정보 및 정렬
+// 파라미터    : 없음
+// 리턴값      : result
+// 작성자      : 김재성
+// ---------------------------------------
+
+function routin_list_info()
+{
+    
+
+    $sql = 
+    " SELECT "
+	." list_title "
+	." ,list_contents "
+	." ,list_due_time "
+    ." ,list_no "
+    ." ,list_done_flg "
+    ." FROM "
+    ." routine_list "
+    ." WHERE "
+    ." date(list_now_date)=date(NOW()) "
+    ." ORDER BY "
+    ." list_done_flg "
+    ." ASC "
+    ." ,list_due_time "
+    ." ASC "
+    ; 
+
+    $conn=null;
+    
+    try {
+        db_conn($conn);
+        $stmt=$conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+
+    } catch (EXCEPTION $e) {
+        echo $e->getMessage();
+    }
+    finally{
+        $conn = null;
+    }
+    return $result;
+}
+
+// ---------------------------------------
+// 함수명      : routin_list_info_count
+// 기능        : 오늘 routin_list 계수
+// 파라미터    : $param_flg
+// 리턴값      : $result[0]['cnt']
+// 작성자      : 김재성
+// ---------------------------------------
+
+function routin_list_info_count($param_flg)
+{
+    
+
+    $sql = 
+    " SELECT "
+    ." count(*) cnt "
+    ." FROM "
+    ." routine_list "
+    ." WHERE "
+    ." date(list_now_date)=date(NOW()) "
+    ." AND "
+    ." list_done_flg=:list_done_flg "
+    ; 
+
+    $arr=array(
+        ":list_done_flg" =>$param_flg
+    );
+
+    $conn=null;
+    
+    try {
+        db_conn($conn);
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($arr);
+        $result = $stmt->fetchAll();
+        $conn->commit();
+
+    } catch (EXCEPTION $e) {
+        echo $e->getMessage();
+        $conn->rollback();
+    }
+    finally{
+        $conn = null;
+    }
+    return $result[0]['cnt'];
+}
+
+// ---------------------------------------
+// 함수명      : update_check_flg
+// 기능        : 체크리스트 update
+// 파라미터    : &$param_arr
+// 리턴값      : 없음
+// 작성자      : 김재성
+// ---------------------------------------
+
+function update_check_flg(&$param_arr)
+{
+    $sql=
+    " UPDATE "
+    ." routine_list "
+    ." SET "
+    ." list_done_flg = :list_done_flg "
+    ." WHERE "
+    ." list_no = :list_no "
+    ;
+
+    $arr_prepare =
+    array(
+        ":list_no" => $param_arr["list_no"]
+        ,":list_done_flg" => $param_arr["list_done_flg"]
+    );
+    
+    $conn = null;
+    
+    try {
+        db_conn($conn);
+        $conn->beginTransaction();
+        $stmt = $conn ->prepare($sql);
+        $stmt->execute($arr_prepare);
+        
+        $result_count = $stmt->rowCount();
+        $conn->commit();
+        
+        
+        
+    } catch (Exception $e) {
+        $conn->rollBack();
+        return $e->getMessage();
+    }
+    finally{
+        $conn =null;
+    }
+    
+    return $result_count;
+}
 ?>

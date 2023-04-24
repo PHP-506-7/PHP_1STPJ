@@ -1,5 +1,5 @@
 <?php
-define( "URL_DB", "common/fnc_park.php" );
+define( "URL_DB", "common/db_common.php" );
 include_once( URL_DB );
 
 $get_arr = $_GET;

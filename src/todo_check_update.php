@@ -1,10 +1,10 @@
 <?php
-    include_once( "common/fnc_kim.php" );
+    include_once( "common/db_common.php" );
 
     $arr_get=$_GET;
 
 
-    $resert_check=list_no_info($arr_get);
+    $resert_check=todo_select_detail($arr_get["list_no"]);
 
 
     if ($resert_check["list_done_flg"]==0) {

@@ -8,9 +8,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 70px 1fr 47px;
-    height: 100%; width: 100%;
-    background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
-    background-size: cover;
 }
 .contents_all{
     display: grid;
@@ -109,7 +106,6 @@ li{
     text-overflow:ellipsis;
     white-space:nowrap;
 }
-
 .due_time_over{
     color: #be9eff;
     font-weight: bold;
