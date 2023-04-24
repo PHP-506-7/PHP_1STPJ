@@ -4,7 +4,7 @@ include_once( "common/fnc_park.php" );
 
 $arr_get=$_GET;
     
-    $result_check=todo_select_todo_detail($arr_get["list_no"]);
+    $result_check=todo_select_detail($arr_get["list_no"]);
 
     if ($result_check["list_done_flg"]==0) 
     {
