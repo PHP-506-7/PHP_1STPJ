@@ -262,6 +262,9 @@ function todo_select_recom_routine()
         ." ,recom_contents "
         ." FROM "
         ." recom_routine "
+        ." ORDER BY "
+        ." RAND() "
+        ." LIMIT 1 "
         ;
 
     $arr_prepare = array();
@@ -284,10 +287,8 @@ function todo_select_recom_routine()
         $conn = null;
     }
 
-    return $result;
+    return $result[0];  //이중배열
 }
-
-// var_dump(todo_select_recom_routine());
 
 /*---------------------------------------------
 함수명 : todo_insert_info
