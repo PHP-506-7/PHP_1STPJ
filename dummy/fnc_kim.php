@@ -56,7 +56,7 @@ function insert_routine_list()
 
 // ---------------------------------------
 // 함수명      : routin_list_info
-// 기능        : 오늘 routin_list 모든정보
+// 기능        : 오늘 routin_list 모든정보 및 정렬
 // 파라미터    : 없음
 // 리턴값      : result
 // ---------------------------------------
@@ -101,6 +101,7 @@ function routin_list_info()
 }
 
 // ---------------------------------------
+// TODO        : 중복 함수
 // 함수명      : list_no_info
 // 기능        : list_no 서치
 // 파라미터    : param_no

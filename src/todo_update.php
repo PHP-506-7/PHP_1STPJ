@@ -1,5 +1,5 @@
 <?php
-    define( "URL_DB", "common/fnc_park.php" );
+    define( "URL_DB", "common/db_common.php" );
     include_once( URL_DB );
 
     $http_method = $_SERVER["REQUEST_METHOD"];
@@ -61,64 +61,62 @@
     <title>수정</title>
 </head>
 <body>
-    <div class="position">
-        <!-- 취소 버튼 -->
-        <a href="todo_detail.php?list_no=<? echo $list_no ?>">
-            <button class="back_button">
-                <img id="back_button" src="common/img/back_button.png" alt="취소">
-            </button>
-        </a>
-        <div class="container">     <!-- 로고부터 완료/삭제 버튼 -->
-            <div class="logo">
-                <img id="logo" src="common/img/logo.png" alt="logo">
-            </div>
-            <div class="p_none">
-                <p>Make it easy!</p>
-            </div>
-            <form action="todo_update.php" method="post">
-                <div class="contents">
-                    <div class="line">
-                        <img id="line" src="common/img/line.png" alt="line">
-                        <input type="text" name="routine_title" value="<? echo $result_info["routine_title"] ?>" required></input>
-                    </div>
-                    <div class="clock">
-                        <img id="clock" src="common/img/clock.png" alt="clock">
-                        <select name="routine_due_hour" required>
-                            <? foreach ( $hour as $val ) { 
-                            if ($val == mb_substr($result_info["routine_due_time"],0,2)) { ?>
-                                <option selected><? echo $val ?></option>
-                                <? }
-                            else { ?>
-                                <option><? echo $val ?></option>
-                            <? }
-                            } ?>
-                        </select>
-                        <p>:</p>
-                        <select name="routine_due_min" required>
-                            <? foreach ( $min as $val ) { 
-                            if ($val == mb_substr($result_info["routine_due_time"],3,2)) { ?>
-                                <option selected><? echo $val ?></option>
-                                <? }
-                            else { ?>
-                                <option><? echo $val ?></option>
-                            <? }
-                            } ?>
-                        </select>
-                    </div>
-                    <div class="clip">
-                        <img id="clip" src="common/img/clip.png" alt="clip">
-                        <input type="text" name="routine_contents" value="<? echo $result_info["routine_contents"] ?>" required></input>
-                    </div>
-                    <input type="hidden" name="routine_no" value="<? echo $result_info["routine_no"] ?>" readonly></input>
-                    <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>
-                    <div class="none_but"></div>
-                    <div class="but">     <!-- 버튼 부분 -->
-                        <button type="submit">완료</button>
-                        <a href="todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>"><button type="button">삭제</button></a>
-                    </div>
-                </div>
-            </form>
+    <!-- 취소 버튼 -->
+    <a href="todo_detail.php?list_no=<? echo $list_no ?>">
+        <button class="back_button">
+            <img id="back_button" src="common/img/back_button.png" alt="취소">
+        </button>
+    </a>
+    <div class="container">     <!-- 로고부터 완료/삭제 버튼 -->
+        <div class="logo">
+            <img id="logo" src="common/img/logo.png" alt="logo">
         </div>
+        <div class="p_none">
+            <p>Make it easy!</p>
+        </div>
+        <form action="todo_update.php" method="post">
+            <div class="contents">
+                <div class="line">
+                    <img id="line" src="common/img/line.png" alt="line">
+                    <input type="text" name="routine_title" value="<? echo $result_info["routine_title"] ?>" required></input>
+                </div>
+                <div class="clock">
+                    <img id="clock" src="common/img/clock.png" alt="clock">
+                    <select name="routine_due_hour" required>
+                        <? foreach ( $hour as $val ) { 
+                        if ($val == mb_substr($result_info["routine_due_time"],0,2)) { ?>
+                            <option selected><? echo $val ?></option>
+                            <? }
+                        else { ?>
+                            <option><? echo $val ?></option>
+                        <? }
+                        } ?>
+                    </select>
+                    <p>:</p>
+                    <select name="routine_due_min" required>
+                        <? foreach ( $min as $val ) { 
+                        if ($val == mb_substr($result_info["routine_due_time"],3,2)) { ?>
+                            <option selected><? echo $val ?></option>
+                            <? }
+                        else { ?>
+                            <option><? echo $val ?></option>
+                        <? }
+                        } ?>
+                    </select>
+                </div>
+                <div class="clip">
+                    <img id="clip" src="common/img/clip.png" alt="clip">
+                    <input type="text" name="routine_contents" value="<? echo $result_info["routine_contents"] ?>" required></input>
+                </div>
+                <input type="hidden" name="routine_no" value="<? echo $result_info["routine_no"] ?>" readonly></input>
+                <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>
+                <div class="none_but"></div>
+                <div class="but">     <!-- 버튼 부분 -->
+                    <button type="submit">완료</button>
+                    <a href="todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>"><button type="button">삭제</button></a>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>

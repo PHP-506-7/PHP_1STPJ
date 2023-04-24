@@ -1,6 +1,6 @@
 <?php
 
-include_once( "common/fnc_park.php" );
+include_once( "common/db_common.php" );
 
 $http_method = $_SERVER["REQUEST_METHOD"];
 
@@ -57,9 +57,10 @@ $arr_1 = todo_select_recom_routine();
                 <p>What do </p> 
                 <p>you want to do?</p>
             </div>
+            <div class="p_none"></div>
         <form action="todo_insert.php" method="post">
             <div class="contents">
-                <div class="line_insert">
+                <div class="line">
                     <img id="line" src="./common/img/line.png" alt="line">
                     <input type="text" name="routine_title" placeholder="<? echo $arr_1["recom_title"]?>" maxlength="10" required></input>
                 </div>
