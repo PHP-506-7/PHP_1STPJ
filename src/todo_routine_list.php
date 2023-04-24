@@ -60,18 +60,18 @@
                     </div>
                         <div class="gauge">
                             <?
-                            if ($taget_count==1) {
-                                    if ($goal_count==1) {
-                                        ?>
-                                        <div id="goal_gauge_one"></div>
-                                        <?
-                                    }
-                                    elseif ($taget_count==1) {
-                                        ?>
-                                        <div id="no_gauge_one"></div>
-                                        <?
-                                    }
+                            if ($goal_count+$taget_count==1) {
+                                if ($goal_count==1) {
+                                    ?>
+                                    <div id="goal_gauge_one"></div>
+                                    <?
                                 }
+                                elseif($taget_count==1)  {
+                                    ?>
+                                    <div id="no_gauge_one"></div>
+                                    <?
+                                }
+                            }
                             else {
                                 for ($i=0; $i < $goal_count; $i++) { 
                                     ?>
