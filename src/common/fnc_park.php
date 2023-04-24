@@ -6,6 +6,7 @@ include_once( "db_common.php" );
 기능   : 게시글 작성
 파라미터 : Arr      &$param_arr
 리턴값  :  int/array     $result_cnt/ERRMSG
+사용여부 : o
 -----------------------------------------------*/
 
 function todo_insert_recom_routine( &$param_arr )
@@ -61,6 +62,7 @@ function todo_insert_recom_routine( &$param_arr )
 기능   : 게시글 정보
 파라미터 : int      &$param_no
 리턴값  :  int/array     $result/ERRMSG
+사용여부 : o
 -----------------------------------------------*/
 
 function todo_select_detail( &$param_no )
@@ -482,6 +484,7 @@ function update_check_flg(&$param_arr)
 기능   : 삽입 페이지 할일 랜덤 추천
 파라미터 : 
 리턴값  :  array     $result/ERRMSG
+사용여부 : o
 -----------------------------------------------*/
 function todo_select_recom_routine()
 {
@@ -590,6 +593,7 @@ function todo_insert_info( &$param_arr )
 기능   : routine_info에 정보 인서트
 파라미터 : array      &$param_arr
 리턴값  :  str     $last_no/ERRMSG
+사용여부 : o
 -----------------------------------------------*/
 function todo_insert_routine_info( &$param_arr )
 {
@@ -646,6 +650,7 @@ function todo_insert_routine_info( &$param_arr )
 기능   : routine_info정보를 select해서 routine_list 테이블에 insert 
 파라미터 : int      &$param_no
 리턴값  :  int/str     $last_no/ERRMSG
+사용여부 : o
 -----------------------------------------------*/
 function todo_insert_routine_list( &$param_no )
 {
