@@ -57,13 +57,13 @@ function todo_insert_recom_routine( &$param_arr )
 
 
 /*---------------------------------------------
-함수명 : todo_select_todo_detail
+함수명 : todo_select_detail
 기능   : 게시글 정보
 파라미터 : int      &$param_no
 리턴값  :  int/array     $result/ERRMSG
 -----------------------------------------------*/
 
-function todo_select_todo_detail( &$param_no )
+function todo_select_detail( &$param_no )
 {
     $sql =
         " SELECT "
@@ -111,7 +111,7 @@ function todo_select_todo_detail( &$param_no )
 함수명 : todo_update_flg
 기능   : 게시글 정보
 파라미터 : int      &$param_arr
-리턴값  :  int/array     $result/ERRMSG
+리턴값  :  int/array     $result_cnt/ERRMSG
 -----------------------------------------------*/
 function todo_update_flg( &$param_arr )
 {
@@ -155,6 +155,12 @@ function todo_update_flg( &$param_arr )
 
 }
 
+/*---------------------------------------------
+함수명 : select_routine_info_cnt
+기능   : 
+파라미터 : int      &$param_arr
+리턴값  :  int/array     $result/ERRMSG
+-----------------------------------------------*/
 function select_routine_info_cnt()
 {
     $sql = 
@@ -198,7 +204,7 @@ function select_routine_info_cnt()
 // 함수명      : update_check_flg
 // 기능        : 체크리스트 update
 // 파라미터    : &$param_arr
-// 리턴값      : 없음
+// 리턴값      : $result_count
 // ---------------------------------------
 
 function update_check_flg(&$param_arr)
@@ -213,11 +219,11 @@ function update_check_flg(&$param_arr)
     ;
 
     $arr_prepare =
-    array(
-        ":list_no" => $param_arr["list_no"]
-        ,":list_done_flg" => $param_arr["list_done_flg"]
-    );
-    
+            array(
+                ":list_no" => $param_arr["list_no"]
+                ,":list_done_flg" => $param_arr["list_done_flg"]
+            );
+            
     $conn = null;
     
     try {
@@ -225,15 +231,16 @@ function update_check_flg(&$param_arr)
         $conn->beginTransaction();
         $stmt = $conn ->prepare($sql);
         $stmt->execute($arr_prepare);
-        
         $result_count = $stmt->rowCount();
         $conn->commit();
     } 
-    catch (Exception $e) {
+    catch (Exception $e) 
+    {
         $conn->rollBack();
         return $e->getMessage();
     }
-    finally{
+    finally
+    {
         $conn =null;
     }
     
@@ -243,8 +250,8 @@ function update_check_flg(&$param_arr)
 /*---------------------------------------------
 함수명 : todo_select_recom_routine
 기능   : 삽입 페이지 할일 랜덤 추천
-파라미터 : int      &$param_no
-리턴값  :  int/array     $result/ERRMSG
+파라미터 : 
+리턴값  :  array     $result/ERRMSG
 -----------------------------------------------*/
 function todo_select_recom_routine()
 {
@@ -285,8 +292,8 @@ function todo_select_recom_routine()
 /*---------------------------------------------
 함수명 : todo_insert_info
 기능   : db의 list, info에 둘다 정보가 적용
-파라미터 : int      &$param_no
-리턴값  :  int/array     $result/ERRMSG
+파라미터 : int      &$param_arr
+리턴값  :  int/array     $result_cnt/ERRMSG
 -----------------------------------------------*/
 function todo_insert_info( &$param_arr )
 {
@@ -348,7 +355,7 @@ function todo_insert_info( &$param_arr )
 
 
 /*---------------------------------------------
-함수명 : todo_select_list
+함수명 : todo_insert_routine_info
 기능   : routine_info에 정보 인서트
 파라미터 : array      &$param_arr
 리턴값  :  str     $last_no/ERRMSG
@@ -357,11 +364,14 @@ function todo_insert_routine_info( &$param_arr )
 {
     $sql =
         " INSERT INTO "
-        ." routine_info ( "
+        ." routine_info "
+        ." ( "
         ." routine_title "
         ." ,routine_contents "
-        ." ,routine_due_time ) "
-        ." VALUES ( "
+        ." ,routine_due_time "
+        ." ) "
+        ." VALUES "
+        ." ( "
         ." :routine_title "
         ." ,:routine_contents "
         ." ,:routine_due_time "

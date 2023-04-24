@@ -13,6 +13,9 @@
     width: 100%;
     background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
     background-size: cover;
+    background-repeat : no-repeat;
+    height: 100vh;
+    width: 100%;
 }
 
 .container {
@@ -76,8 +79,7 @@
 
 .clock {
     display: grid;
-    grid-template-columns: 20px 30px 5px 30px;
-    grid-gap: 17px;
+    grid-template-columns: 37px 30px 20px 30px;
     align-items: center;
 }
 
@@ -100,7 +102,7 @@
 }
 
 .but {
-    padding-top: 140px;
+    padding-top: 120px;
     display: grid;
     grid-template-columns: 106px 106px;
     grid-gap: 27px;

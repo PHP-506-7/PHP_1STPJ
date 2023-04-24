@@ -9,14 +9,14 @@ $http_method = $_SERVER["REQUEST_METHOD"];
 $hour = array();
     for ($i=0; $i < 24; $i++) 
     {
-    if ($i<10) 
-    {
-        array_push($hour, "0".$i);
-    }
-    else
-    {
-        array_push($hour, $i);
-    }
+        if ($i<10) 
+        {
+            array_push($hour, "0".$i);
+        }
+        else
+        {
+            array_push($hour, $i);
+        }
     }
 $min = array("00", "10", "20", "30", "40", "50");
 
@@ -30,7 +30,7 @@ if ( $http_method === "POST" )
     $arr_post = $_POST;
     $result = todo_insert_routine_info($arr_post);
     $result_list = todo_insert_routine_list($result);
-    $result_select = todo_select_todo_detail($result_list);
+    $result_select = todo_select_detail($result_list);
 
     header( "Location: todo_detail.php?list_no=".$result_select["list_no"]);
     exit();
@@ -104,7 +104,7 @@ if ( $http_method === "POST" )
                 <a id="but2" href= "todo_routine_list.php?list_no"> 
                     <button type="button">
                             취소
-                </button>
+                    </button>
                 </a>
                 </div>
             </div>
