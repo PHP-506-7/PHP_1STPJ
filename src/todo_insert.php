@@ -31,12 +31,7 @@ $min = array("00", "10", "20", "30", "40", "50");
 
 
 $arr_1 = todo_select_recom_routine();
-$rand_no = rand(0,count($arr_1)-1);
-
-
-
-
-
+// $rand_no = rand(0,count($arr_1)-1);      0424 del 내용 간소화
 
 
 ?> 
@@ -48,10 +43,11 @@ $rand_no = rand(0,count($arr_1)-1);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert page</title>
-    <link rel="stylesheet" href="./css/todo_insert.css">
+    <link rel="stylesheet" href="./css/todo_total.css">
     <link rel="icon" href="common/img/favi.png">
 </head>
 <body>
+    <div class="none"></div>
     <div class="container">
             <div class="logo">
                 <img id="logo" src="./common/img/logo.png" alt="logo">
@@ -61,12 +57,12 @@ $rand_no = rand(0,count($arr_1)-1);
                 <p>What do </p> 
                 <p>you want to do?</p>
             </div>
-
+            <div class="p_none"></div>
         <form action="todo_insert.php" method="post">
             <div class="contents">
                 <div class="line">
                     <img id="line" src="./common/img/line.png" alt="line">
-                    <input type="text" name="routine_title" placeholder="<? echo $arr_1[$rand_no]["recom_title"]?>" required></input>
+                    <input type="text" name="routine_title" placeholder="<? echo $arr_1["recom_title"]?>" required></input>
                 </div>
                 
                 <div class="clock">
@@ -95,7 +91,9 @@ $rand_no = rand(0,count($arr_1)-1);
                 </div>
                 <div class="clip">
                     <img id="clip" src="./common/img/clip.png" alt="clip">
-                    <input type="text" name ="routine_contents" placeholder="<? echo $arr_1[$rand_no]["recom_contents"]?>" required></input>
+                    <input type="text" name ="routine_contents" placeholder="<? echo $arr_1["recom_contents"]?>" required></input>
+                </div>
+                <div class="none_but">
                 </div>
                 <div class="but">
                     <button type="submit">
