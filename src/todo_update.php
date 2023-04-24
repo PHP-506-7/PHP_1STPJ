@@ -72,8 +72,9 @@
             <div class="logo">
                 <img id="logo" src="common/img/logo.png" alt="logo">
             </div>
-            <p>Make it easy!</p>
-            <div class="p_none"></div>
+            <div class="p_none">
+                <p>Make it easy!</p>
+            </div>
             <form action="todo_update.php" method="post">
                 <div class="contents">
                     <div class="line">

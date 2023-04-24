@@ -26,9 +26,9 @@ $result_info = todo_select_detail( $arr_get["list_no"] );
         </div>
         <div class = "phase">
             <p id="text">
-                안녕하세요.
+                오늘은
             <br>
-                오늘은<?echo date("m")?>월 <?echo date("d")?>일입니다.
+                <?echo date("m")?>월 <?echo date("d")?>일입니다.
             </p>
         </div>
         <div class="contents">

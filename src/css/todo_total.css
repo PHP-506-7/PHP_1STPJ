@@ -23,18 +23,12 @@ a {
 .none {
     margin-top: 96px;
 }
+
 .container {
-    /* padding-top: 100px; */
     margin: 0 55px;
     display: grid;
     grid-gap: 30px;
 }
-
-/* .container2 {       update 위에 이전로고 때문에 따로
-    margin: 0 55px;
-    display: grid;
-    grid-gap: 30px;
-} */
 
 .back_button {
     margin-left: 33px;
@@ -50,29 +44,33 @@ a {
 
 .contents {
     display: grid;
-    grid-gap: 30px; /*34px*/
+    grid-gap: 30px; 
 }
 
 .logo {
     margin: 0 auto;
-    /* margin-top: 90px; */
     text-align: center;
     width: 60vw;
 }
 
 #logo {
     width: 100%;
-    /* width: 250px; */
 }
 
-.container > p {
+.p_none {
+    display: grid;
+    align-items: center;
+}
+
+.p_none > p {
     font-size: 30px;
     font-weight: 800;
-    padding: 0 0 40px;
+    height: 114px;
+    line-height: 114px;
 }
 
 #text{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 800;
     text-align: center;
     text-align: left;
@@ -88,7 +86,6 @@ a {
 }
 
 .phase {
-    /* margin: 10px; */
     font-size: 30px;
     font-weight: 900;
     text-align: center;
@@ -96,12 +93,14 @@ a {
     text-align: left;
 }
 
-.p_none {
+.line {
     display: grid;
-    /* grid-template-rows: 1fr; */
+    grid-template-columns: 10px 240px;
+    grid-gap: 27px;
 }
 
-.line {
+.line_insert {
+    margin-top: 26px;
     display: grid;
     grid-template-columns: 10px 240px;
     grid-gap: 27px;
@@ -114,6 +113,13 @@ a {
 
 #line {
     width: 5px;
+}
+
+.line_insert input {
+    font-size: 30px;
+    font-weight: 900;
+    border: none;
+    background: transparent;
 }
 
 .line input {
@@ -151,7 +157,6 @@ a {
     font-weight: 400;
 }
 
-
 .clip input, .clock input {
     font-size: 16px;
     font-weight: 400;
@@ -182,14 +187,14 @@ a {
 
 .none_but {
     display: grid;
-    grid-template-rows: 57px 1fr;
+    grid-template-rows: 70px 1fr;
 }
+
 #but1, #but2 {
     color: rgb(63, 63, 63);
 }
 
 #not_done, #done {
-    /* margin-top: 35px; */
     width: 44px;
     text-align: center;
 }

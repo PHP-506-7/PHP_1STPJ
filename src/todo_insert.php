@@ -57,10 +57,9 @@ $arr_1 = todo_select_recom_routine();
                 <p>What do </p> 
                 <p>you want to do?</p>
             </div>
-            <div class="p_none"></div>
         <form action="todo_insert.php" method="post">
             <div class="contents">
-                <div class="line">
+                <div class="line_insert">
                     <img id="line" src="./common/img/line.png" alt="line">
                     <input type="text" name="routine_title" placeholder="<? echo $arr_1["recom_title"]?>" required></input>
                 </div>
