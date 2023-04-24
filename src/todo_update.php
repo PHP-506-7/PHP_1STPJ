@@ -56,7 +56,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/todo_update.css">
+    <link rel="stylesheet" href="css/todo_total.css">
     <link rel="icon" href="common/img/favi.png">
     <title>수정</title>
 </head>
@@ -73,6 +73,7 @@
                 <img id="logo" src="common/img/logo.png" alt="logo">
             </div>
             <p>Make it easy!</p>
+            <div class="p_none"></div>
             <form action="todo_update.php" method="post">
                 <div class="contents">
                     <div class="line">
@@ -109,6 +110,7 @@
                     </div>
                     <input type="hidden" name="routine_no" value="<? echo $result_info["routine_no"] ?>" readonly></input>
                     <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>
+                    <div class="none_but"></div>
                     <div class="but">     <!-- 버튼 부분 -->
                         <button type="submit">완료</button>
                         <a href="todo_delete.php?routine_no=<? echo $result_info['routine_no'] ?>"><button type="button">삭제</button></a>
