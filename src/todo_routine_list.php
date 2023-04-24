@@ -63,12 +63,12 @@
                             if ($taget_count==1) {
                                     if ($goal_count==1) {
                                         ?>
-                                        <div class="goal_gauge_one"></div>
+                                        <div id="goal_gauge_one"></div>
                                         <?
                                     }
                                     elseif ($taget_count==1) {
                                         ?>
-                                        <div class="no_gauge_one"></div>
+                                        <div id="no_gauge_one"></div>
                                         <?
                                     }
                                 }
