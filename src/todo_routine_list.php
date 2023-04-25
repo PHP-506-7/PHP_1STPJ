@@ -21,8 +21,8 @@
     $goal_count=routin_list_info_count(1); //완료한 개수
     $goal_percent_temp=$goal_count/($goal_count+$taget_count)*100; //달성률 퍼센트로 계산
     $goal_percent=round($goal_percent_temp,1); // 소수점 2번째 자리에서 반올림
-    $high_hour=(date("H")+3);
-    $hour=date("H")
+    $hour=date("H"); //현재
+    $high_hour=(date("H")+3); //하이라이트 기준시간
 
 ?>
 
@@ -113,7 +113,7 @@
                             <?   
                         }
                         elseif ($value["list_done_flg"]==0) { 
-                            if (mb_substr($value["list_due_time"],0,2)<=$high_hour&&mb_substr($value["list_due_time"],0,2)>$hour) { //0424 update 오류 수정
+                            if (mb_substr($value["list_due_time"],0,2)<=$high_hour && mb_substr($value["list_due_time"],0,2)>$hour) { //0424 update 오류 수정
                                 ?>
                                 <div class="due_time_high">
                                     <?echo mb_substr($value["list_due_time"],0,5)?> 
