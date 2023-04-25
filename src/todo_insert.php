@@ -54,8 +54,13 @@ $arr_1 = todo_select_recom_routine();
             </div>
 
             <div class = "phase">
-                <p>What do </p> 
-                <p>you want to do?</p>
+                <!-- <p>What do </p> 
+                <p>you want to do?</p>  0425 del--> 
+                <p>
+                    What do 
+                    <br>
+                    you want to do?
+                </p>
             </div>
             <div class="p_none"></div>
         <form action="todo_insert.php" method="post">

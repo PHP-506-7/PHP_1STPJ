@@ -35,8 +35,8 @@ function db_conn( &$param_conn )
 /*---------------------------------------------
 함수명      : todo_select_detail
 기능        : 게시글 정보
-파라미터    : int      &$param_no
-리턴값      :  int/array     $result/ERRMSG
+파라미터    : int           &$param_no
+리턴값      : int/array     $result/ERRMSG
 작성자      : 박수연
 -----------------------------------------------*/
 
@@ -318,7 +318,7 @@ function delete_list_info(&$param_arr)
 함수명      : todo_select_recom_routine
 기능        : 삽입 페이지 할일 랜덤 추천
 파라미터    : 없음
-리턴값      :  array     $result/ERRMSG
+리턴값      : array     $result/ERRMSG
 작성자      : 박수연
 -----------------------------------------------*/
 function todo_select_recom_routine()
@@ -363,7 +363,7 @@ function todo_select_recom_routine()
 함수명      : todo_insert_routine_info
 기능        : routine_info에 정보 인서트
 파라미터    : array      &$param_arr
-리턴값      :  str     $last_no/ERRMSG
+리턴값      : str        $last_no/ERRMSG
 작성자      : 박수연
 -----------------------------------------------*/
 function todo_insert_routine_info( &$param_arr )
