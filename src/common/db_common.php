@@ -239,7 +239,8 @@ function update_routine_del_flg( &$param_arr )
         " UPDATE routine_info "
         ." SET "
         ."  routine_del_flg = '1' "
-        ." WHERE routine_no = :routine_no "
+        ."  ,routine_del_date = NOW() "  // 0425 add 최아란
+        ." WHERE routine_no = :routine_no "  
         ;
     
     $arr_prepare = 
