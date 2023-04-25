@@ -58,39 +58,37 @@
                     <div class="goal_text">
                         <p><?echo $goal_count?>/<?echo $goal_count+$taget_count?> 완료</p>
                     </div>
-                        <div class="gauge">
-                            <?
-                            if ($goal_count+$taget_count==1) {
-                                if ($goal_count==1) {
-                                    ?>
-                                    <div id="goal_gauge_one"></div>
-                                    <?
-                                }
-                                elseif($taget_count==1)  {
-                                    ?>
-                                    <div id="no_gauge_one"></div>
-                                    <?
-                                }
-                            }
-                            else {
-                                for ($i=0; $i < $goal_count; $i++) { 
-                                    ?>
-                                    <div class="goal_gauge"></div>
-                                    <?
-                                }
+                    <div class="gauge">
+                        <?
+                        if ($goal_count+$taget_count==1) {
+                            if ($goal_count==1) {
                                 ?>
+                                <div id="goal_gauge_one"></div>
                                 <?
-                                for ($i=0; $i < $taget_count; $i++) { 
-                                    ?>
-                                    <div class="no_gauge"></div>
-                                    <?
-                                }
                             }
-                            ?>
-                        </div>
-                        <div class="goal_pcent">
-                            <p><?echo $goal_percent."%"?></p>
-                        </div>
+                            elseif($taget_count==1)  {
+                                ?>
+                                <div id="no_gauge_one"></div>
+                                <?
+                            }
+                        }
+                        else {
+                            for ($i=0; $i < $goal_count; $i++) { 
+                                ?>
+                                <div class="goal_gauge"></div>
+                                <?
+                            }
+                            for ($i=0; $i < $taget_count; $i++) { 
+                                ?>
+                                <div class="no_gauge"></div>
+                                <?
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="goal_pcent">
+                        <p><?echo $goal_percent."%"?></p>
+                    </div>
                 </div>
             </head>
             <main>
@@ -98,59 +96,59 @@
                     <?
                     foreach ($list_info as $value) {
                         ?>
-                    <li>
-                        <div class="list">
-                        <?
-                        if ($value["list_done_flg"]==1) {
-                        ?>
-                            <div class="due_time">
-                                <?echo mb_substr($value["list_due_time"],0,5)?> 
-                            </div>
-                            <div class="list_title">
-                                <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str" ><?echo $value["list_title"]?></a>
-                            </div>
-                            <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="checked_status"></a>
-                            <?   
-                        }
-                        elseif ($value["list_done_flg"]==0) { 
-                            if (mb_substr($value["list_due_time"],0,2)<=$high_hour && mb_substr($value["list_due_time"],0,2)>$hour) { //0424 update 오류 수정
-                                ?>
-                                <div class="due_time_high">
-                                    <?echo mb_substr($value["list_due_time"],0,5)?> 
-                                </div>
-                                <div class="list_title_high">
-                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
-                                </div>
+                        <li>
+                            <div class="list">
                             <?
-                            }
-                            elseif(mb_substr($value["list_due_time"],0,2)>$high_hour){
+                            if ($value["list_done_flg"]==1) {
                             ?>
                                 <div class="due_time">
                                     <?echo mb_substr($value["list_due_time"],0,5)?> 
                                 </div>
                                 <div class="list_title">
-                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str" ><?echo $value["list_title"]?></a>
                                 </div>
+                                <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="checked_status"></a>
+                                <?   
+                            }
+                            elseif ($value["list_done_flg"]==0) { 
+                                if (mb_substr($value["list_due_time"],0,2)<=$high_hour && mb_substr($value["list_due_time"],0,2)>$hour) { //0424 update 오류 수정
+                                    ?>
+                                    <div class="due_time_high">
+                                        <?echo mb_substr($value["list_due_time"],0,5)?> 
+                                    </div>
+                                    <div class="list_title_high">
+                                        <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    </div>
+                                <?
+                                }
+                                elseif(mb_substr($value["list_due_time"],0,2)>$high_hour){
+                                ?>
+                                    <div class="due_time">
+                                        <?echo mb_substr($value["list_due_time"],0,5)?> 
+                                    </div>
+                                    <div class="list_title">
+                                        <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    </div>
+                                <?
+                                }
+                                elseif (mb_substr($value["list_due_time"],0,2)<=$hour) {
+                                ?>
+                                    <div class="due_time_over">
+                                        <?echo mb_substr($value["list_due_time"],0,5)?> 
+                                    </div>
+                                    <div class="list_title_high">
+                                        <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
+                                    </div>
+                                <?
+                                }
+                                ?>
+                                <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
                             <?
                             }
-                            elseif (mb_substr($value["list_due_time"],0,2)<=$hour) {
                             ?>
-                                <div class="due_time_over">
-                                    <?echo mb_substr($value["list_due_time"],0,5)?> 
-                                </div>
-                                <div class="list_title_high">
-                                    <a href="todo_detail.php?list_no=<?echo $value["list_no"]?>" class="limit_str"><?echo $value["list_title"]?></a>
-                                </div>
-                            <?
-                            }
-                            ?>
-                            <a href="todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
-                        <?
-                        }
-                        ?>
-                        </div>
-                    </li>
-                    <?php
+                            </div>
+                        </li>
+                    <?
                     }
                     ?>
                 </ul>
