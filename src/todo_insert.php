@@ -48,7 +48,7 @@ $arr_1 = todo_select_recom_routine();
 </head>
 <body>
     <div class="none"></div>
-    <div class="container">
+        <div class="container">
             <div class="logo">
                 <img id="logo" src="./common/img/logo.png" alt="logo">
             </div>
@@ -61,8 +61,8 @@ $arr_1 = todo_select_recom_routine();
                     <br>
                     you want to do?
                 </p>
-            </div>
-            <div class="p_none"></div>
+        </div>
+        <div class="p_none"></div>
         <form action="todo_insert.php" method="post">
             <div class="contents">
                 <div class="line">
@@ -104,11 +104,11 @@ $arr_1 = todo_select_recom_routine();
                     <button type="submit">
                             완료
                     </button>
-                <a id="but2" href= "todo_routine_list.php?list_no"> 
-                    <button type="button">
-                            취소
-                    </button>
-                </a>
+                    <a id="but2" href= "todo_routine_list.php?list_no"> 
+                        <button type="button">
+                                취소
+                        </button>
+                    </a>
                 </div>
             </div>
         </form>
