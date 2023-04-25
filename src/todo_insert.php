@@ -15,7 +15,7 @@ if ( $http_method === "POST" )
     exit();
 }
 
-// $hour = array();
+// $hour = array();                     //0425 del 내용 간소화
 //     for ($i=0; $i < 24; $i++) 
 //     {
 //         if ($i<10) 
@@ -31,7 +31,7 @@ if ( $http_method === "POST" )
 $hour = [];
 for ($i = 0; $i < 24; $i++) 
 {
-    $hour[] = str_pad($i, 2, "0", STR_PAD_LEFT);
+    $hour[] = str_pad($i, 2, "0", STR_PAD_LEFT);    //왼쪽 부터(앞에서 부터) $i에 0이 붙음(최대자리수 : 2 빈칸이면 채우는 수: 0)
 }
 $min = array("00", "10", "20", "30", "40", "50");
 
