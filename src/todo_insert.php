@@ -1,6 +1,6 @@
 <?php
-
-include_once( "common/db_common.php" );
+define( "URL_DB", "common/db_common.php" );
+include_once( URL_DB );
 
 $http_method = $_SERVER["REQUEST_METHOD"];
 
