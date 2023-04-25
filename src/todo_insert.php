@@ -15,18 +15,24 @@ if ( $http_method === "POST" )
     exit();
 }
 
-$hour = array();
-    for ($i=0; $i < 24; $i++) 
-    {
-        if ($i<10) 
-        {
-            array_push($hour, "0".$i);
-        }
-        else
-        {
-            array_push($hour, $i);
-        }
-    }
+// $hour = array();
+//     for ($i=0; $i < 24; $i++) 
+//     {
+//         if ($i<10) 
+//         {
+//             array_push($hour, "0".$i);
+//         }
+//         else
+//         {
+//             array_push($hour, $i);
+//         }
+//     }
+
+$hour = [];
+for ($i = 0; $i < 24; $i++) 
+{
+    $hour[] = str_pad($i, 2, "0", STR_PAD_LEFT);
+}
 $min = array("00", "10", "20", "30", "40", "50");
 
 
