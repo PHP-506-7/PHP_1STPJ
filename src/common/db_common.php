@@ -400,7 +400,7 @@ function todo_insert_routine_info( &$param_arr )
         $conn->beginTransaction();
         $stmt = $conn -> prepare( $sql ); 
         $stmt -> execute( $arr_prepare ); 
-        $last_no = $conn->lastInsertId();
+        $last_no = $conn->lastInsertId();   //insert한 동시에 그 insert한 값을 가져오는(최신 값 불러옴),최근 INSERT한 자료의 ID 반환, AUTO_INCREMENT에 따라 생성된 최근 ID
         $conn->commit();
     } 
     catch ( Exception $e) 
@@ -459,7 +459,7 @@ function todo_insert_routine_list( &$param_no )
         $conn->beginTransaction();
         $stmt = $conn -> prepare( $sql ); 
         $stmt -> execute( $arr_prepare ); 
-        $last_no = $conn->lastInsertId();
+        $last_no = $conn->lastInsertId();   //최근 값
         $conn->commit();
     } 
     catch ( Exception $e) 
@@ -478,7 +478,7 @@ function todo_insert_routine_list( &$param_no )
 
 // ---------------------------------------
 // 함수명      : insert_routine_list
-// 기능        : 루틴임포를 리스트에 생성
+// 기능        : 루틴인포를 리스트에 생성
 // 파라미터    : 없음
 // 리턴값      : 없음
 // 작성자      : 김재성
