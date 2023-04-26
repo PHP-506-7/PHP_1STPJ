@@ -36,7 +36,7 @@ function db_conn( &$param_conn )
 함수명      : todo_select_detail
 기능        : 게시글 정보 select
 파라미터    : int           &$param_no
-리턴값      : int/array     $result/ERRMSG
+리턴값      : array     $result/ERRMSG
 작성자      : 박수연
 -----------------------------------------------*/
 
@@ -421,7 +421,7 @@ function todo_insert_routine_info( &$param_arr )
 함수명      : todo_insert_routine_list
 기능        : routine_info정보를 select해서 routine_list 테이블에 insert 
 파라미터    : int         &$param_no
-리턴값      : int/str     $last_no/ERRMSG
+리턴값      : str     $last_no/ERRMSG
 작성자      : 박수연
 -----------------------------------------------------------------------*/
 function todo_insert_routine_list( &$param_no )
