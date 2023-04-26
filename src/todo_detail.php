@@ -25,23 +25,23 @@ $result_info = todo_select_detail( $arr_get["list_no"] );
             <img id="logo" src="./common/img/logo.png" alt="logo">
         </div>
         <div class = "phase">
-            <p id="text">
+            <span id="text">
                 오늘은
             <br>
                 <?echo date("m")?>월 <?echo date("d")?>일입니다.
-            </p>
+            </span>
         </div>
         <div class="contents">
             <div class="line">
                 <img id="line" src="./common/img/line.png" alt="line">
-                <p id="line_text" ><? echo $result_info["list_title"]?></p>
+                <span id="line_text" ><? echo $result_info["list_title"]?></span>
             </div>
 
             <div class="clock">
                 <img id="clock" src="./common/img/clock.png" alt="clock">
-                <p><? echo mb_substr($result_info["list_due_time"],0,2)?></p>
-                <p>:</p>
-                <p><? echo mb_substr($result_info["list_due_time"],3,2)?></p>
+                <span><? echo mb_substr($result_info["list_due_time"],0,2)?></span>
+                <span>:</span>
+                <span><? echo mb_substr($result_info["list_due_time"],3,2)?></span>
             </div>
 
             <div class="clip">
