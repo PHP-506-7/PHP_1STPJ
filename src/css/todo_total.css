@@ -130,10 +130,7 @@ a {
 }
 
 .clock {
-    width: 10px;
-}
-
-.clock {
+    width: 100px;
     display: grid;
     grid-template-columns: 24px 1fr 1fr 1fr;
     grid-gap: 17px;
