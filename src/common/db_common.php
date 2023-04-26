@@ -400,7 +400,7 @@ function todo_insert_routine_info( &$param_arr )
         $conn->beginTransaction();
         $stmt = $conn -> prepare( $sql ); 
         $stmt -> execute( $arr_prepare ); 
-        $last_no = $conn->lastInsertId();   //최근 insert한 값의 pk를 가져옴
+        $last_rouinte_no = $conn->lastInsertId();   //최근 insert한 값의 pk를 가져옴
         $conn->commit();
     } 
     catch ( Exception $e) 
@@ -413,7 +413,7 @@ function todo_insert_routine_info( &$param_arr )
         $conn = null;
     }
 
-    return $last_no;
+    return $last_rouinte_no;
 }
 
 
@@ -459,7 +459,7 @@ function todo_insert_routine_list( &$param_no )
         $conn->beginTransaction();
         $stmt = $conn -> prepare( $sql ); 
         $stmt -> execute( $arr_prepare ); 
-        $last_no = $conn->lastInsertId();   //최근 값
+        $last_list_no = $conn->lastInsertId();   //최근 값
         $conn->commit();
     } 
     catch ( Exception $e) 
@@ -472,7 +472,7 @@ function todo_insert_routine_list( &$param_no )
         $conn = null;
     }
 
-    return $last_no;
+    return $last_list_no;
 }
 
 
