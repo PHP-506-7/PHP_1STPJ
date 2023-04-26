@@ -4,7 +4,7 @@ include_once( URL_DB );
 
 $http_method = $_SERVER["REQUEST_METHOD"];
 
-if ( $http_method === "POST" )              //else로 오류잡는 것까진 구현 못함/추가 용이를 위해서 if로 만듦(혹시나 else사용할 일이 생기면 추가하기 위해서)
+if ( $http_method === "POST" )              
 {
     $arr_post = $_POST;                             //if를 사용하지 않으면 HTTP 요청 방법이 "POST"인지 확인되지 않기 때문에 if 사용
     $result = todo_insert_routine_info($arr_post);
@@ -88,7 +88,7 @@ $arr_1 = todo_select_recom_routine();
                             }
                         ?>
                     </select>
-                        <p>:</p>    <!-- css 표현을 위해서, p문으로 한 이유 : css grid로 조정을 할수있었기 때문에 p로 했음-->
+                        <span>:</span>  
                     <select id="min" name="routine_due_min" required>
                         <? 
                             foreach ( $min as $val ) 
