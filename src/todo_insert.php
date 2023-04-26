@@ -4,8 +4,8 @@ include_once( URL_DB );
 
 $http_method = $_SERVER["REQUEST_METHOD"];
 
-if ( $http_method === "POST" )              
-{
+if ( $http_method === "POST" )                      
+{                                                   //insert에 값을 넣을 경우 detail에 그 값을 넘겨주는 것
     $arr_post = $_POST;                             //if를 사용하지 않으면 HTTP 요청 방법이 "POST"인지 확인되지 않기 때문에 if 사용
     $result = todo_insert_routine_info($arr_post);
     $result_list = todo_insert_routine_list($result);
