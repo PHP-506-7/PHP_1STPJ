@@ -264,7 +264,7 @@ function todo_select_recom_routine()
         ." recom_routine "
         ." ORDER BY "
         ." RAND() "
-        ." LIMIT 1 "
+        ." LIMIT 1 "            //랜덤으로 값 추출
         ;
 
     $arr_prepare = array();
@@ -276,7 +276,7 @@ function todo_select_recom_routine()
         db_conn( $conn );
         $stmt = $conn -> prepare( $sql );
         $stmt -> execute( $arr_prepare );
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetchAll();    //실행결과를 배열에 저장
     } 
     catch ( Exception $e) 
     {
