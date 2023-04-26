@@ -110,7 +110,7 @@ $arr_1 = todo_select_recom_routine();
                     <button type="submit">
                             완료
                     </button>
-                    <a id="but2" href= "todo_routine_list.php?list_no"> 
+                    <a id="but2" href= "todo_routine_list.php">
                         <button type="button">
                             취소
                         </button>
