@@ -1,6 +1,5 @@
 <?php
-    define( "URL_DB", "common/db_common.php" );
-    include_once( URL_DB );
+    include_once( "common/db_common.php" );
 
     $http_method = $_SERVER["REQUEST_METHOD"];
 
@@ -25,7 +24,7 @@
         // routine_info 테이블 업데이트
         update_routine_info($arr_post);
 
-        // routine_list 테이블 업데이트
+        // routine_list 당일 날짜 테이블 레코드 정보 최신화
         update_routine_list();
 
         header( "Location: todo_detail.php?list_no=".$arr_post["list_no"] );
@@ -33,20 +32,18 @@
     }
 
     // 시간과 분 option값으로 넣는 배열
-    $hour = array(); // 시간
-    for ( $i=0; $i < 24; $i++ ) 
+    $hour = []; //시간
+    for ($i = 0; $i < 24; $i++) 
     {
-        if ( $i < 10 ) {
-            array_push( $hour, "0".$i );
-        }
-        else
-        {
-            array_push( $hour, $i );
-        }
+        $hour[] = str_pad($i, 2, "0", STR_PAD_LEFT);
     }
     $min = array(  //분 
         "00", "10", "20", "30", "40", "50" 
     );
+
+    // DB정보를 담는 변수
+    $db_hour = mb_substr($result_info["routine_due_time"],0,2); // db 데이터 시간
+    $db_min = mb_substr($result_info["routine_due_time"],3,2);  // db 데이터 분
 
 ?>
 
@@ -84,21 +81,26 @@
                     <img id="clock" src="common/img/clock.png" alt="clock">
                     <select name="routine_due_hour" required>
                         <? foreach ( $hour as $val ) { 
-                        if ($val == mb_substr($result_info["routine_due_time"],0,2)) { ?>
+                        if ( $val == $db_hour ) 
+                        { ?>
                             <option selected><? echo $val ?></option>
-                            <? }
-                        else { ?>
+                        <? }
+                        else 
+                        { ?>
                             <option><? echo $val ?></option>
                         <? }
                         } ?>
                     </select>
                     <p>:</p>
                     <select name="routine_due_min" required>
-                        <? foreach ( $min as $val ) { 
-                        if ($val == mb_substr($result_info["routine_due_time"],3,2)) { ?>
+                        <? foreach ( $min as $val ) 
+                        { 
+                        if ( $val == $db_min )
+                        { ?>
                             <option selected><? echo $val ?></option>
-                            <? }
-                        else { ?>
+                        <? }
+                        else 
+                        { ?>
                             <option><? echo $val ?></option>
                         <? }
                         } ?>
