@@ -37,13 +37,13 @@
     {
         $hour[] = str_pad($i, 2, "0", STR_PAD_LEFT);
     }
-    $min = array(  //분 
+    $min = array(  // 분 
         "00", "10", "20", "30", "40", "50" 
     );
 
-    // DB정보를 담는 변수
-    $db_hour = mb_substr($result_info["routine_due_time"],0,2); // db 데이터 시간
-    $db_min = mb_substr($result_info["routine_due_time"],3,2);  // db 데이터 분
+    // DB 정보를 담는 변수
+    $db_hour = mb_substr($result_info["routine_due_time"],0,2); // DB 데이터 시간
+    $db_min = mb_substr($result_info["routine_due_time"],3,2);  // DB 데이터 분
 
 ?>
 
@@ -91,7 +91,7 @@
                         <? }
                         } ?>
                     </select>
-                    <p>:</p>
+                    <div>:</div>
                     <select name="routine_due_min" required>
                         <? foreach ( $min as $val ) 
                         { 
