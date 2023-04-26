@@ -400,7 +400,7 @@ function todo_insert_routine_info( &$param_arr )
         $conn->beginTransaction();
         $stmt = $conn -> prepare( $sql ); 
         $stmt -> execute( $arr_prepare ); 
-        $last_no = $conn->lastInsertId();   //insert한 동시에 그 insert한 값을 가져오는(최신 값 불러옴),최근 INSERT한 자료의 ID 반환, AUTO_INCREMENT에 따라 생성된 최근 ID
+        $last_no = $conn->lastInsertId();   //최근 insert한 값의 pk를 가져옴
         $conn->commit();
     } 
     catch ( Exception $e) 
