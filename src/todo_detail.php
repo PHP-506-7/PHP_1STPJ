@@ -1,6 +1,6 @@
 <?php
-
-include_once( "common/db_common.php" );
+define( "URL_DB", "common/db_common.php" );
+include_once( URL_DB );
 
 $arr_get = $_GET;
 
