@@ -112,7 +112,7 @@ $arr_1 = todo_select_recom_routine();
                     </button>
                     <a id="but2" href= "todo_routine_list.php?list_no"> 
                         <button type="button">
-                                취소
+                            취소
                         </button>
                     </a>
                 </div>
