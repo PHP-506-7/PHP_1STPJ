@@ -12,7 +12,7 @@ if ( $http_method === "POST" )
     // $result_select = todo_select_detail($result_list);  // 0427 del
 
     // header( "Location: todo_detail.php?list_no=".$result_select["list_no"]); // 0427 del
-    header( "Location: todo_detail.php?list_no=".$result_list );  // 0427 udt
+    header( "Location: todo_detail.php?list_no=".$result_list );  // 0427 add
     exit();
 }
 
