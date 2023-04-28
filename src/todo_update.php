@@ -75,7 +75,7 @@
             <div class="contents">
                 <div class="line">
                     <img id="line" src="common/img/line.png" alt="line">
-                    <input type="text" name="routine_title" value="<? echo $result_info["routine_title"] ?>" maxlength="10" required></input>
+                    <input type="text" name="routine_title" value="<? echo $result_info["routine_title"] ?>" maxlength="10" autocomplete="off" required></input>
                 </div>
                 <div class="clock">
                     <img id="clock" src="common/img/clock.png" alt="clock">
@@ -108,7 +108,7 @@
                 </div>
                 <div class="clip">
                     <img id="clip" src="common/img/clip.png" alt="clip">
-                    <input type="text" name="routine_contents" value="<? echo $result_info["routine_contents"] ?>" maxlength="33" required></input>
+                    <input type="text" name="routine_contents" value="<? echo $result_info["routine_contents"] ?>" maxlength="33" autocomplete="off" required></input>
                 </div>
                 <input type="hidden" name="routine_no" value="<? echo $result_info["routine_no"] ?>" readonly></input>
                 <input type="hidden" name="list_no" value="<? echo $list_no ?>" readonly></input>

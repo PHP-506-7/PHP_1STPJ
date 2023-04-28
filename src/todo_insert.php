@@ -9,9 +9,10 @@ if ( $http_method === "POST" )
     $arr_post = $_POST;                             //if를 사용하지 않으면 HTTP 요청 방법이 "POST"인지 확인되지 않기 때문에 if 사용
     $result = todo_insert_routine_info($arr_post);
     $result_list = todo_insert_routine_list($result);
-    $result_select = todo_select_detail($result_list);
+    // $result_select = todo_select_detail($result_list);  // 0427 del
 
-    header( "Location: todo_detail.php?list_no=".$result_select["list_no"]);
+    // header( "Location: todo_detail.php?list_no=".$result_select["list_no"]); // 0427 del
+    header( "Location: todo_detail.php?list_no=".$result_list );  // 0427 add
     exit();
 }
 
@@ -58,7 +59,6 @@ $arr_1 = todo_select_recom_routine();
             <div class="logo">
                 <img id="logo" src="./common/img/logo.png" alt="logo">
             </div>
-
             <div class = "phase">
                 <!-- <p>What do </p> 
                 <p>you want to do?</p>  0425 del--> 
