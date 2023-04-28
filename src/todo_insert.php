@@ -73,7 +73,7 @@ $arr_1 = todo_select_recom_routine();
             <div class="contents">
                 <div class="line">
                     <img id="line" src="./common/img/line.png" alt="line">
-                    <input type="text" name="routine_title" placeholder="<? echo $arr_1["recom_title"]?>" maxlength="10" required></input>
+                    <input type="text" name="routine_title" placeholder="<? echo $arr_1["recom_title"]?>" maxlength="10" required autocomplete="off"></input>
                 </div>
                 
                 <div class="clock">
@@ -102,7 +102,7 @@ $arr_1 = todo_select_recom_routine();
                 </div>
                 <div class="clip">
                     <img id="clip" src="./common/img/clip.png" alt="clip">
-                    <input type="text" name ="routine_contents" placeholder="<? echo $arr_1["recom_contents"]?>" maxlength="33" required></input>
+                    <input type="text" name ="routine_contents" placeholder="<? echo $arr_1["recom_contents"]?>" maxlength="33" required autocomplete="off"></input>
                 </div>
                 <div class="none_but">
                 </div>
