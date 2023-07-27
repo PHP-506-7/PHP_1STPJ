@@ -9,11 +9,11 @@
    - 일상생활에 중요한 잠을 개인이 쉽게 관리할 수 있도록 도움을 주는 것이 목표
 
 3. 개발 환경 및 장비
+      
+   ![mariadb](https://github.com/PHP-506-wdye/project-2/assets/126547805/1816a975-eec0-4960-87ca-c66ddca34fa2)
+   ![php](https://github.com/PHP-506-wdye/project-2/assets/126547805/4e60555c-e228-4625-ab55-1ffc29650c2c)![css3](https://github.com/PHP-506-wdye/project-2/assets/126547805/238fd694-2056-4969-9035-b3b6f095923a)![html5](https://github.com/PHP-506-wdye/project-2/assets/126547805/ef5011d9-5fd1-4391-b57f-11f907b45097)![visual-studio-code](https://github.com/PHP-506-wdye/project-2/assets/126547805/ea1e0a09-9bf9-46b7-9cb5-42fedd776ada)
    
-![mariadb](https://github.com/PHP-506-wdye/project-2/assets/126547805/1816a975-eec0-4960-87ca-c66ddca34fa2)
-![php](https://github.com/PHP-506-wdye/project-2/assets/126547805/4e60555c-e228-4625-ab55-1ffc29650c2c)![css3](https://github.com/PHP-506-wdye/project-2/assets/126547805/238fd694-2056-4969-9035-b3b6f095923a)![html5](https://github.com/PHP-506-wdye/project-2/assets/126547805/ef5011d9-5fd1-4391-b57f-11f907b45097)![visual-studio-code](https://github.com/PHP-506-wdye/project-2/assets/126547805/ea1e0a09-9bf9-46b7-9cb5-42fedd776ada)
-
-
-지라 : https://dkfks0832.atlassian.net/jira/software/projects/RV3/boards/3/timeline
-
-소개 : https://www.canva.com/design/DAFg_fCbWbE/jvu-AjGj-ifYtXRZjeWLdQ/view?utm_content=DAFg_fCbWbE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+   
+   지라 : https://dkfks0832.atlassian.net/jira/software/projects/RV3/boards/3/timeline
+   
+   소개 : https://www.canva.com/design/DAFg_fCbWbE/jvu-AjGj-ifYtXRZjeWLdQ/view?utm_content=DAFg_fCbWbE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
