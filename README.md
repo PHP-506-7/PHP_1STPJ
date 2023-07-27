@@ -17,4 +17,4 @@
 
 지라 : https://dkfks0832.atlassian.net/jira/software/projects/RV3/boards/3/timeline
 
-소개 : [https://www.canva.com/design/DAFpma63MDA/mWbtWaXj8nY0sdbfFCI2WA/edit?utm_source=shareButton&utm_medium=email&utm_campaign=designshare](https://www.canva.com/design/DAFg_fCbWbE/jvu-AjGj-ifYtXRZjeWLdQ/view?utm_content=DAFg_fCbWbE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)https://www.canva.com/design/DAFg_fCbWbE/jvu-AjGj-ifYtXRZjeWLdQ/view?utm_content=DAFg_fCbWbE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+소개 : https://www.canva.com/design/DAFg_fCbWbE/jvu-AjGj-ifYtXRZjeWLdQ/view?utm_content=DAFg_fCbWbE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
